@@ -1,12 +1,12 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import TodoList from './components/TodoList'
+import TodoListBox from './components/TodoListBox'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <TodoList></TodoList>
+        <TodoListBox></TodoListBox>
       </header>
     </div>
   );

@@ -1,13 +1,20 @@
-import { Card } from "react-bootstrap";
+import { Card, Col, Container, Row } from "react-bootstrap";
 import TodoList from './TodoList'
 
 function TodoListBox(){
     return(
-        <Card>
-            <Card.Body>
-                <TodoList></TodoList>
-            </Card.Body>
-        </Card>
+        <Container>
+            <Row className="justify-content-md-center">
+                <Col xs={4}>
+                    <Card>
+                        <Card.Body>
+                            <TodoList></TodoList>
+                        </Card.Body>
+                    </Card>
+                </Col>
+            </Row>
+        </Container>
+        
     )
 }
 

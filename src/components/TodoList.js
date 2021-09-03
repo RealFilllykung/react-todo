@@ -17,11 +17,11 @@ function TodoList(){
     function handleKeyPress(e){
         if(e.charCode === 13){
             if (input === '') return
-
             var newItemList = itemList
             newItemList.push({taskName: input})
             setItemList(newItemList)
             setInputBinding('')
+            setInput('')
         }
     }
 
@@ -32,6 +32,7 @@ function TodoList(){
         newItemList.push({taskName: input})
         setItemList(newItemList)
         setInputBinding('')
+        setInput('')
     }
 
     function RemoveTodoItem(e){
@@ -42,22 +43,22 @@ function TodoList(){
         setItemList(newArray)
     }
 
-    
     function RenderTodoListItem(){
         const RenderedTodoListItem = itemList.map((item,index) => {
             return (
-                <Card className="mb-2">
+                <Card className="mt-2">
                     <Row>
-                        <Col xs={10}>
-                            
+                        <Col xs={10} className="mt-2">
                             <TodoListItem key={index} item={item}/>
                         </Col>
-                        <Col xs={2} className="mb-2">
-                            <Button variant="danger" value={index} onClick={(e) => RemoveTodoItem(e)}>-</Button>
+                        <Col xs={2} className="d-block d-lg-none">
+                            <Button variant="danger" value={index} onClick={(e) => RemoveTodoItem(e)}>x</Button>
+                        </Col>
+                        <Col xs={2} className="d-none d-lg-block">
+                            <Button variant="danger" value={index} onClick={(e) => RemoveTodoItem(e)}>Delete</Button>
                         </Col>
                     </Row>
                 </Card>
-            
             )
         })
 
@@ -74,7 +75,7 @@ function TodoList(){
                     <Col xs="auto">
                         <Button variant="success" type="submit" className="mb-2" onClick={() => handleClick()}>+</Button>
                     </Col>
-                </Row>             
+                </Row>           
             </Container>
             <RenderTodoListItem/>
         </div>

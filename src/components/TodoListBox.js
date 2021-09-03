@@ -5,7 +5,7 @@ function TodoListBox(){
     return(
         <Container>
             <Row className="justify-content-md-center">
-                <Col xs={4}>
+                <Col>
                     <Card>
                         <Card.Body>
                             <TodoList></TodoList>
